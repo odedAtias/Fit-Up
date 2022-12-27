@@ -4,6 +4,8 @@ import { StyleSheet, View, TextInput } from 'react-native';
 //  Custom components imports
 import Logo from '../Components/ui/Logo';
 import Input from '../Components/ui/Input';
+import PrimaryButton from '../Components/ui/PrimaryButton';
+import SecondaryButton from '../Components/ui/SecondaryButton';
 
 //  Login component
 const Login = () => {
@@ -17,6 +19,10 @@ const Login = () => {
 			<Input labelName='Password' />
 			{/* @todo - Forgot password link */}
 			{/* Buttons: Login, SignUp */}
+			{/* Login Button */}
+			<PrimaryButton/>
+			{/* SignUp Button */}
+			<SecondaryButton/>	
 		</View>
 	);
 };
@@ -35,6 +41,8 @@ const styles = StyleSheet.create({
 		width: '85%',
 		marginBottom: '10%',
 	},
+
+
 });
 
 export default Login;
