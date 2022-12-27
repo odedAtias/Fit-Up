@@ -1,8 +1,9 @@
 //  RN Core components & API imports
-import { StyleSheet, View, TextInput, Dimensions } from 'react-native';
-import InstructionText from '../Components/ui/InstructionText';
+import { StyleSheet, View, TextInput } from 'react-native';
+
 //  Custom components imports
 import Logo from '../Components/ui/Logo';
+import Input from '../Components/ui/Input';
 
 //  Login component
 const Login = () => {
@@ -10,31 +11,15 @@ const Login = () => {
 		//  Login root container
 		<View style={styles.loginContainer}>
 			{/* Logo */}
-			<View>
-				<Logo />
-			</View>
+			<Logo />
 			{/* Sign in form */}
-			<View style={styles.inputContainer}>
-				<InstructionText text={'Username: '} />
-				<TextInput
-					style={styles.textInput}
-					placeholder='Enter your username'
-					placeholderTextColor={'#a6a6a6'}
-				/>
-			</View>
-			<View style={styles.inputContainer}>
-				<InstructionText text={'Password: '} />
-				<TextInput
-					style={styles.textInput}
-					placeholder='Enter your password'
-					placeholderTextColor={'#a6a6a6'}
-				/>
-			</View>
+			<Input labelName='Username' />
+			<Input labelName='Password' />
+			{/* @todo - Forgot password link */}
+			{/* Buttons: Login, SignUp */}
 		</View>
 	);
 };
-
-const screenDevice = Dimensions.get('window');
 
 //  Login StyleSheet
 const styles = StyleSheet.create({
@@ -47,7 +32,7 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 1,
 	},
 	inputContainer: {
-		width: screenDevice.width < 400 ? '75%' : '85%',
+		width: '85%',
 		marginBottom: '10%',
 	},
 });
