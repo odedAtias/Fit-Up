@@ -1,11 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
+//  Custom components imports
+import Login from './Screens/Login';
 
 export default function App() {
-  return (
-    <View>
-      <Text>Project Start Point</Text>
-    </View>
-  );
+	return <Login />;
 }
 
 const styles = StyleSheet.create({});
