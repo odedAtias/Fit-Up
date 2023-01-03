@@ -6,6 +6,9 @@ import Logo from '../Components/ui/Logo';
 import Input from '../Components/ui/Input';
 import PrimaryButton from '../Components/ui/PrimaryButton';
 
+//	Constant data imports
+import Colors from '../Assets/Colors';
+
 //  Login component
 const Login = () => {
 	return (
@@ -19,9 +22,9 @@ const Login = () => {
 			{/* @todo - Forgot password link */}
 			{/* Buttons: Login, SignUp */}
 			{/* Login Button */}
-			<PrimaryButton bgColor='#79AD94'>Sign in</PrimaryButton>
+			<PrimaryButton bgColor={Colors.PrimaryColor}>Sign in</PrimaryButton>
 			{/* SignUp Button */}
-			<PrimaryButton bgColor='#010101'>Sign up</PrimaryButton>
+			<PrimaryButton bgColor={Colors.SecondaryColor}>Sign up</PrimaryButton>
 		</View>
 	);
 };
