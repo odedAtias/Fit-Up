@@ -1,24 +1,31 @@
 //  RN Core components & API imports
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
+//  PrimaryButton component
 const PrimaryButton = ({ children, bgColor }) => {
 	return (
-		<View style={[style.loginButton, { backgroundColor: bgColor }]}>
-			<Pressable>
-				<Text style={style.textColor}>{children}</Text>
+		<View style={[styles.buttonOuterContainer, { backgroundColor: bgColor }]}>
+			<Pressable
+				style={styles.buttonInnerContainer}
+				onPress={() => console.log('hi')}>
+				<Text style={styles.textColor}>{children}</Text>
 			</Pressable>
 		</View>
 	);
 };
 
-const style = StyleSheet.create({
-	loginButton: {
-		alignItems: 'center',
-		width: '60%',
-		margin: 5,
-		paddingTop: 15,
-		paddingBottom: 15,
+//  PrimaryButton styleSheet
+const styles = StyleSheet.create({
+	buttonOuterContainer: {
 		borderRadius: 25,
+		margin: 6,
+		overflow: 'hidden',
+		width: '60%',
+	},
+
+	buttonInnerContainer: {
+		alignItems: 'center',
+		paddingVertical: 15,
 	},
 
 	textColor: {
