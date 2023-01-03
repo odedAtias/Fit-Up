@@ -12,6 +12,7 @@ const Input = ({ labelName }) => {
 				style={styles.textInput}
 				placeholder={`Enter your ${labelName}`}
 				placeholderTextColor={'#a6a6a6'}
+				secureTextEntry={labelName == 'Password' ? true : false}
 			/>
 		</View>
 	);
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
 	textInput: {
 		borderBottomColor: 'black',
 		borderBottomWidth: 1,
+		fontSize: 16,
 	},
 	inputContainer: {
 		width: '85%',

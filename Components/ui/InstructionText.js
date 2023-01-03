@@ -13,7 +13,7 @@ const InstructionText = ({ text }) => {
 //	InstructionText StyleSheet
 const styles = StyleSheet.create({
 	text: {
-		fontSize: 18,
+		fontSize: 19,
 		marginBottom: 10,
 	},
 });
