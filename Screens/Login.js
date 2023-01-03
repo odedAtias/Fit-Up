@@ -1,11 +1,10 @@
 //  RN Core components & API imports
-import { StyleSheet, View, TextInput } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 //  Custom components imports
 import Logo from '../Components/ui/Logo';
 import Input from '../Components/ui/Input';
 import PrimaryButton from '../Components/ui/PrimaryButton';
-import SecondaryButton from '../Components/ui/SecondaryButton';
 
 //  Login component
 const Login = () => {
@@ -20,9 +19,9 @@ const Login = () => {
 			{/* @todo - Forgot password link */}
 			{/* Buttons: Login, SignUp */}
 			{/* Login Button */}
-			<PrimaryButton/>
+			<PrimaryButton bgColor='#79AD94'>Sign in</PrimaryButton>
 			{/* SignUp Button */}
-			<SecondaryButton/>	
+			<PrimaryButton bgColor='#010101'>Sign up</PrimaryButton>
 		</View>
 	);
 };
@@ -41,8 +40,6 @@ const styles = StyleSheet.create({
 		width: '85%',
 		marginBottom: '10%',
 	},
-
-
 });
 
 export default Login;
