@@ -14,13 +14,10 @@ const Logo = () => {
 };
 
 const styles = StyleSheet.create({
-	logoContainer: {
-		width: 250,
-		height: 250,
-	},
+	logoContainer: {},
 	image: {
-		width: '100%',
-		height: '100%',
+		width: 200,
+		height: 140,
 	},
 });
 
