@@ -2,10 +2,10 @@
 import { View, Text, StyleSheet } from 'react-native';
 
 //  InstructionsText component
-const InstructionText = ({ text }) => {
+const InstructionText = ({ labelName }) => {
 	return (
 		<View>
-			<Text style={styles.text}>{text}</Text>
+			<Text style={styles.text}>{labelName}</Text>
 		</View>
 	);
 };

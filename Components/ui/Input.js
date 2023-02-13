@@ -1,13 +1,15 @@
 //  RN Core components imports
 import { StyleSheet, View, TextInput } from 'react-native';
 //  Custom components imports
-import InstructionText from '../ui/InstructionText';
+import Label from './Label';
 
 //  TextInput component
-const Input = ({ labelName }) => {
+const Input = ({ labelName, iconName }) => {
 	return (
 		<View style={styles.inputContainer}>
-			<InstructionText text={`${labelName}`} />
+			{/* Label */}
+			<Label labelName={labelName} iconName={iconName} />
+			{/* Input  */}
 			<TextInput
 				style={styles.textInput}
 				placeholder={`Enter your ${labelName}`}
@@ -18,16 +20,20 @@ const Input = ({ labelName }) => {
 	);
 };
 
+// Todo : Omit the line under the value of the text input
+
 //  TextInput StyleSheet
 const styles = StyleSheet.create({
+	inputContainer: {
+		width: '85%',
+		marginVertical: 20,
+		padding: 0,
+	},
+
 	textInput: {
 		borderBottomColor: 'black',
 		borderBottomWidth: 1,
 		fontSize: 16,
-	},
-	inputContainer: {
-		width: '85%',
-		padding: 24,
 	},
 });
 

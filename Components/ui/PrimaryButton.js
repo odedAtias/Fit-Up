@@ -7,7 +7,7 @@ const PrimaryButton = ({ children, bgColor }) => {
 		<View style={[styles.buttonOuterContainer, { backgroundColor: bgColor }]}>
 			<Pressable
 				style={styles.buttonInnerContainer}
-				onPress={() => console.log('hi')}>
+				onPress={() => console.log(`${children} button pressed ...`)}>
 				<Text style={styles.textColor}>{children}</Text>
 			</Pressable>
 		</View>
@@ -18,7 +18,7 @@ const PrimaryButton = ({ children, bgColor }) => {
 const styles = StyleSheet.create({
 	buttonOuterContainer: {
 		borderRadius: 25,
-		margin: 6,
+		margin: 10,
 		overflow: 'hidden',
 		width: '60%',
 	},

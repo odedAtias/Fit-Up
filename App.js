@@ -9,9 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text } from 'react-native';
 
 //  Custom components imports
-
-import Categories from './Screens/Categories';
-import Logo from './Components/ui/Logo';
+import Login from './Screens/Login';
 
 // Ionicons (from vector icons API) import
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +23,7 @@ import Colors from './Assets/Colors';
 
 //	App component
 export default function App() {
-	return <Logo imageWidth={170} imageHeight={120} />;
+	return <Login />;
 }
 
 //	App StyleSheet

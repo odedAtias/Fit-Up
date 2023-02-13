@@ -1,5 +1,5 @@
 //  RN Core components & API imports
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
 
 //  Custom components imports
 import Logo from '../Components/ui/Logo';
@@ -13,35 +13,68 @@ import Colors from '../Assets/Colors';
 const Login = () => {
 	return (
 		//  Login root container
-		<View style={styles.loginContainer}>
+		<View style={styles.container}>
 			{/* Logo */}
-			<Logo />
-			{/* Sign in form */}
-			<Input labelName='Username' />
-			<Input labelName='Password' />
-			{/* @todo - Forgot password link */}
-			{/* Buttons: Login, SignUp */}
-			{/* Login Button */}
-			<PrimaryButton bgColor={Colors.PrimaryColor}>Sign in</PrimaryButton>
-			{/* SignUp Button */}
-			<PrimaryButton bgColor={Colors.SecondaryColor}>Sign up</PrimaryButton>
+			<View style={styles.logoContainer}>
+				<Logo imageWidth={240} imageHeight={200} />
+			</View>
+			{/* Inputs */}
+			<View style={styles.inputsContainer}>
+				<Input labelName='Username' iconName='person-sharp' />
+				<Input labelName='Password' iconName='lock-closed' />
+			</View>
+			{/* Buttons */}
+			<View style={styles.buttonsContainer}>
+				<PrimaryButton bgColor={Colors.PrimaryColor}>Sign in</PrimaryButton>
+				{/* SignUp Button */}
+				<PrimaryButton bgColor={Colors.SecondaryColor}>Sign up</PrimaryButton>
+			</View>
+			{/* Forgot Password link */}
+			<View style={styles.forgotPasswordOuterContainer}>
+				<Text style={styles.forgotPasswordText}>Forgot password ?</Text>
+				<Pressable
+					onPress={() => {
+						console.log('forgot password Pressed ...');
+					}}>
+					<Text style={[styles.forgotPasswordText, styles.forgotPasswordLink]}>
+						click here
+					</Text>
+				</Pressable>
+			</View>
 		</View>
 	);
 };
 
+// Todo : touchAble toggle button to hide/display the password
+
 //  Login StyleSheet
 const styles = StyleSheet.create({
-	loginContainer: {
+	container: {
 		flex: 1,
 		alignItems: 'center',
 	},
-	textInput: {
-		borderBottomColor: 'black',
-		borderBottomWidth: 1,
+	logoContainer: {
+		height: '30%',
 	},
-	inputContainer: {
-		width: '85%',
-		marginBottom: '10%',
+	inputsContainer: {
+		width: '100%',
+		alignItems: 'center',
+		marginBottom: '5%',
+	},
+	buttonsContainer: {
+		width: '100%',
+		alignItems: 'center',
+	},
+	forgotPasswordOuterContainer: {
+		marginTop: 15,
+		flexDirection: 'row',
+	},
+	forgotPasswordText: {
+		fontSize: 16,
+	},
+	forgotPasswordLink: {
+		marginLeft: 3,
+		color: '#4C00B0',
 	},
 });
 
