@@ -2,11 +2,11 @@
 import { StyleSheet, View, Image } from 'react-native';
 
 //  Logo component
-const Logo = () => {
+const Logo = ({ imageWidth, imageHeight }) => {
 	return (
 		<View style={styles.logoContainer}>
 			<Image
-				style={styles.image}
+				style={{ width: imageWidth, height: imageHeight }}
 				source={require('../../Assets/Images/FitUp-Logo.png')}
 			/>
 		</View>
@@ -14,10 +14,12 @@ const Logo = () => {
 };
 
 const styles = StyleSheet.create({
-	logoContainer: {},
-	image: {
-		width: 200,
-		height: 140,
+	logoContainer: {
+		flex: 1,
+		margin: 0,
+		padding: 0,
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });
 

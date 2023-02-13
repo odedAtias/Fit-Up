@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 	},
 	inputContainer: {
 		width: '85%',
-		marginBottom: '10%',
+		padding: 24,
 	},
 });
 
