@@ -29,7 +29,17 @@ const BottomTabsComponent = () => {
 			<BottomTabs.Screen
 				name='Categories'
 				component={Categories}
-				options={{ headerShown: false }}
+				options={{
+					headerShown: false,
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons
+							name='search-sharp'
+							size={size}
+							color={Colors.SecondaryColor}
+						/>
+					),
+					tabBarActiveTintColor: Colors.SecondaryColor,
+				}}
 			/>
 		</BottomTabs.Navigator>
 	);
@@ -39,12 +49,12 @@ const BottomTabsComponent = () => {
 const Header = () => (
 	<View
 		style={{
-			height: '20%',
+			height: '10%',
 			backgroundColor: Colors.PrimaryColor,
 			padding: '20%',
-			flex: 1,
+			paddingBottom: '17%',
 		}}>
-		<Logo imageWidth={170} imageHeight={120} />
+		<Logo imageWidth={180} imageHeight={100} />
 	</View>
 );
 
@@ -63,7 +73,8 @@ export default function App() {
 					{/* First Screen - Nested BottomTab Navigator*/}
 					<Stack.Screen
 						name='BottomTabsComponent'
-						component={BottomTabsComponent}></Stack.Screen>
+						component={BottomTabsComponent}
+						options={{}}></Stack.Screen>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</>
