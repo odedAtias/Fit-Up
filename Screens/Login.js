@@ -25,9 +25,21 @@ const Login = () => {
 			</View>
 			{/* Buttons */}
 			<View style={styles.buttonsContainer}>
-				<PrimaryButton bgColor={Colors.PrimaryColor}>Sign in</PrimaryButton>
+				<PrimaryButton
+					bgColor={Colors.PrimaryColor}
+					onPress={() => {
+						console.log('Sign in button pressed ...');
+					}}>
+					Sign in
+				</PrimaryButton>
 				{/* SignUp Button */}
-				<PrimaryButton bgColor={Colors.SecondaryColor}>Sign up</PrimaryButton>
+				<PrimaryButton
+					bgColor={Colors.SecondaryColor}
+					onPress={() => {
+						console.log('Sign up button pressed ...');
+					}}>
+					Sign up
+				</PrimaryButton>
 			</View>
 			{/* Forgot Password link */}
 			<View style={styles.forgotPasswordOuterContainer}>

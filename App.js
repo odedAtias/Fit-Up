@@ -6,10 +6,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //  RN Core components & API imports
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 //  Custom components imports
-import Login from './Screens/Login';
+import Categories from './Screens/Categories';
+import Logo from './Components/ui/Logo';
 
 // Ionicons (from vector icons API) import
 import { Ionicons } from '@expo/vector-icons';
@@ -18,13 +19,53 @@ import { Ionicons } from '@expo/vector-icons';
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
-// Constants
+// Constants variables
 import Colors from './Assets/Colors';
+
+// BottomTab component (The nested navigator component)
+const BottomTabsComponent = () => {
+	return (
+		<BottomTabs.Navigator>
+			<BottomTabs.Screen
+				name='Categories'
+				component={Categories}
+				options={{ headerShown: false }}
+			/>
+		</BottomTabs.Navigator>
+	);
+};
+
+// Header component
+const Header = () => (
+	<View
+		style={{
+			height: '20%',
+			backgroundColor: Colors.PrimaryColor,
+			padding: '20%',
+			flex: 1,
+		}}>
+		<Logo imageWidth={170} imageHeight={120} />
+	</View>
+);
 
 //	App component
 export default function App() {
-	return <Login />;
+	return (
+		<>
+			<StatusBar style='auto' />
+			{/* Navigation configurations */}
+			<NavigationContainer>
+				{/* The main navigator */}
+				<Stack.Navigator
+					screenOptions={{
+						header: Header,
+					}}>
+					{/* First Screen - Nested BottomTab Navigator*/}
+					<Stack.Screen
+						name='BottomTabsComponent'
+						component={BottomTabsComponent}></Stack.Screen>
+				</Stack.Navigator>
+			</NavigationContainer>
+		</>
+	);
 }
-
-//	App StyleSheet
-const styles = StyleSheet.create({});

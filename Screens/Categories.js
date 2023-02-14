@@ -1,5 +1,5 @@
 // Rn core components imports
-import { View, StyleSheet, Text, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 // Custom components imports
 
 import CategoryList from '../Components/categoriesOutput/CategoryList';
@@ -28,8 +28,8 @@ const CATEGORIES = [
 	},
 	{
 		id: 'c5',
-		name: 'Gymanstics',
-		imageUrl: require('../Assets/Images/Categories/Gymnastics.png'),
+		name: 'Swiming',
+		imageUrl: require('../Assets/Images/Categories/Swiming.png'),
 	},
 	{
 		id: 'c6',
@@ -41,21 +41,27 @@ const CATEGORIES = [
 		name: 'Dumbels',
 		imageUrl: require('../Assets/Images/Categories/Dumbels.png'),
 	},
+	{
+		id: 'c8',
+		name: 'Zumba',
+		imageUrl: require('../Assets/Images/Categories/Zumba.png'),
+	},
+	{
+		id: 'c9',
+		name: 'TRX',
+		imageUrl: require('../Assets/Images/Categories/TRX.png'),
+	},
+	{
+		id: 'c10',
+		name: 'Other',
+		imageUrl: require('../Assets/Images/Categories/Other.png'),
+	},
 ];
-//
 
 // Categories component
 const Categories = () => {
 	return (
 		<View style={styles.container}>
-			{/* List of categories */}
-			<View style={styles.inputContainer}>
-				<TextInput
-					style={styles.inputText}
-					placeholder={`Enter your category`}
-					placeholderTextColor={'#a6a6a6'}
-				/>
-			</View>
 			<CategoryList categories={CATEGORIES} />
 		</View>
 	);

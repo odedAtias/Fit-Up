@@ -2,12 +2,10 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
 //  PrimaryButton component
-const PrimaryButton = ({ children, bgColor }) => {
+const PrimaryButton = ({ children, bgColor, onPress }) => {
 	return (
 		<View style={[styles.buttonOuterContainer, { backgroundColor: bgColor }]}>
-			<Pressable
-				style={styles.buttonInnerContainer}
-				onPress={() => console.log(`${children} button pressed ...`)}>
+			<Pressable style={styles.buttonInnerContainer} onPress={onPress}>
 				<Text style={styles.textColor}>{children}</Text>
 			</Pressable>
 		</View>
