@@ -11,7 +11,12 @@ import {
 const CategoryItem = ({ categoryName, categoryImageUrl, handlePress }) => {
 	return (
 		<View style={styles.container}>
-			<Pressable onPress={handlePress} style={styles.innerContainer}>
+			<Pressable
+				onPress={handlePress}
+				style={({ pressed }) => [
+					styles.innerContainer,
+					pressed && styles.buttonPressed,
+				]}>
 				{/* Category item image */}
 				<ImageBackground source={categoryImageUrl} style={styles.image}>
 					<Text style={styles.text}>{categoryName}</Text>
@@ -36,7 +41,6 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.25,
 		shadowOffset: { width: 0, height: 2 },
 		shadowRadius: 8,
-		// borderRadius
 	},
 	innerContainer: {
 		flex: 1,
@@ -50,6 +54,9 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontSize: 24,
 		color: 'white',
+	},
+	buttonPressed: {
+		opacity: 0.75,
 	},
 });
 
