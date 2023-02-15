@@ -28,7 +28,7 @@ const CATEGORIES = [
 	},
 	{
 		id: 'c5',
-		name: 'Swiming',
+		name: 'Swimming',
 		imageUrl: require('../Assets/Images/Categories/Swiming.png'),
 	},
 	{
