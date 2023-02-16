@@ -6,11 +6,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //  RN Core components & API imports
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 //  Custom components imports
 import Categories from './Screens/Categories';
 import Logo from './Components/ui/Logo';
+import Login from './Screens/Login';
 
 // Ionicons (from vector icons API) import
 import { Ionicons } from '@expo/vector-icons';
@@ -60,6 +61,13 @@ const Header = () => (
 
 //	App component
 export default function App() {
+	let num = 1;
+	if ((num = 1))
+		return (
+			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+				<Login />
+			</View>
+		);
 	return (
 		<>
 			<StatusBar style='light' />

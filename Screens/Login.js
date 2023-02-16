@@ -16,7 +16,7 @@ const Login = () => {
 		<View style={styles.container}>
 			{/* Logo */}
 			<View style={styles.logoContainer}>
-				<Logo imageWidth={240} imageHeight={200} />
+				<Logo imageWidth={260} imageHeight={220} />
 			</View>
 			{/* Inputs */}
 			<View style={styles.inputsContainer}>
@@ -64,14 +64,17 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
+		justifyContent: 'center', //
+		width: '100%', //
 	},
 	logoContainer: {
-		height: '30%',
+		height: '20%',
 	},
 	inputsContainer: {
 		width: '100%',
 		alignItems: 'center',
 		marginBottom: '5%',
+		marginTop: '5%',
 	},
 	buttonsContainer: {
 		width: '100%',
