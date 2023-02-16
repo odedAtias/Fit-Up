@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 	},
 	forgotPasswordLink: {
 		marginLeft: 3,
-		color: '#4C00B0',
+		color: Colors.LinkColor,
 	},
 });
 

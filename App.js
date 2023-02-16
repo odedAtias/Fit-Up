@@ -12,6 +12,9 @@ import { View } from 'react-native';
 import Categories from './Screens/Categories';
 import Logo from './Components/ui/Logo';
 import Login from './Screens/Login';
+import RegisteredEvents from './Screens/RegisteredEvents';
+import PersonalDetails from './Screens/PersonalDetails';
+import Favorites from './Screens/Favorites';
 
 // Ionicons (from vector icons API) import
 import { Ionicons } from '@expo/vector-icons';
@@ -26,7 +29,12 @@ import Colors from './Assets/Colors';
 // BottomTab component (The nested navigator component)
 const BottomTabsComponent = () => {
 	return (
-		<BottomTabs.Navigator>
+		<BottomTabs.Navigator
+			screenOptions={{
+				tabBarActiveTintColor: Colors.SecondaryColor,
+				tabBarActiveBackgroundColor: Colors.PrimaryColor,
+			}}>
+			{/* Search events screen */}
 			<BottomTabs.Screen
 				name='Categories'
 				component={Categories}
@@ -39,7 +47,52 @@ const BottomTabsComponent = () => {
 							color={Colors.SecondaryColor}
 						/>
 					),
-					tabBarActiveTintColor: Colors.SecondaryColor,
+				}}
+			/>
+
+			{/* Favorites screen */}
+			<BottomTabs.Screen
+				name='Favorites'
+				component={Favorites}
+				options={{
+					headerShown: false,
+					tabBarIcon: ({ size }) => (
+						<Ionicons
+							name='star-sharp'
+							size={size}
+							color={Colors.SecondaryColor}
+						/>
+					),
+				}}
+			/>
+			{/* My registered events sreen */}
+			<BottomTabs.Screen
+				name='RegisteredEvents'
+				component={RegisteredEvents}
+				options={{
+					headerShown: false,
+					tabBarIcon: ({ size }) => (
+						<Ionicons
+							name='calendar-sharp'
+							size={size}
+							color={Colors.SecondaryColor}
+						/>
+					),
+				}}
+			/>
+			{/* Personal details screen */}
+			<BottomTabs.Screen
+				name='PersonalDetails'
+				component={PersonalDetails}
+				options={{
+					headerShown: false,
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons
+							name='person-sharp'
+							size={size}
+							color={Colors.SecondaryColor}
+						/>
+					),
 				}}
 			/>
 		</BottomTabs.Navigator>
@@ -50,19 +103,18 @@ const BottomTabsComponent = () => {
 const Header = () => (
 	<View
 		style={{
-			height: '10%',
 			backgroundColor: Colors.PrimaryColor,
-			padding: '20%',
+			padding: '25%',
 			paddingBottom: '17%',
 		}}>
-		<Logo imageWidth={180} imageHeight={100} />
+		<Logo imageWidth={200} imageHeight={120} />
 	</View>
 );
 
 //	App component
 export default function App() {
-	let num = 1;
-	if ((num = 1))
+	let num = 2;
+	if (num == 1)
 		return (
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 				<Login />
@@ -81,8 +133,7 @@ export default function App() {
 					{/* First Screen - Nested BottomTab Navigator*/}
 					<Stack.Screen
 						name='BottomTabsComponent'
-						component={BottomTabsComponent}
-						options={{}}></Stack.Screen>
+						component={BottomTabsComponent}></Stack.Screen>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</>

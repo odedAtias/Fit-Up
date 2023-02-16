@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 		borderBottomColor: 'black',
 		borderBottomWidth: 1,
 		fontSize: 16,
+		textAlign: 'left',
 	},
 });
 

@@ -1,5 +1,5 @@
 // Rn core components imports
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 // Custom components imports
 
 import CategoryList from '../Components/categoriesOutput/CategoryList';
@@ -28,8 +28,8 @@ const CATEGORIES = [
 	},
 	{
 		id: 'c5',
-		name: 'Swimming',
-		imageUrl: require('../Assets/Images/Categories/Swiming.png'),
+		name: 'TRX',
+		imageUrl: require('../Assets/Images/Categories/TRX.png'),
 	},
 	{
 		id: 'c6',
@@ -48,8 +48,8 @@ const CATEGORIES = [
 	},
 	{
 		id: 'c9',
-		name: 'TRX',
-		imageUrl: require('../Assets/Images/Categories/TRX.png'),
+		name: 'Swimming',
+		imageUrl: require('../Assets/Images/Categories/Swiming.png'),
 	},
 	{
 		id: 'c10',
