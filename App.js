@@ -62,7 +62,7 @@ const Header = () => (
 export default function App() {
 	return (
 		<>
-			<StatusBar style='auto' />
+			<StatusBar style='light' />
 			{/* Navigation configurations */}
 			<NavigationContainer>
 				{/* The main navigator */}
